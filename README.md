@@ -53,4 +53,4 @@ To exit the application, simply close the window.
 This Lightweight XML Annotation Tool is open-source software released under the MIT License. You are free to use, modify, and distribute it as per the terms of the license.
 
 ## Contact
-If you have any questions or need assistance, you can contact the project maintainer at ✉️ 
+If you have any questions or need assistance, you can contact the project maintainer at ✉️ https://tinyurl.com/XmlAnn1
