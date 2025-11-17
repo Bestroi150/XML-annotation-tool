@@ -1,56 +1,106 @@
-# XML Annotation Tool
+# Text Annotation Tool
 
 ## Overview
 
-The Lightweight XML Annotation Tool is a straightforward desktop application developed using the Tkinter library in Python. It offers an easy and intuitive way to annotate XML data for various purposes, including creating training data for machine learning models or organizing structured information.
-
-This README provides instructions on how to use the tool and how to set it up on your system.
+The Text Annotation Tool is a desktop application built with Tkinter that enables users to annotate text documents with XML tags. It's designed for creating annotated datasets for NLP tasks, named entity recognition (NER), and other text annotation purposes. The tool supports keyboard shortcuts for rapid annotation and provides real-time color-coded visualization of annotated entities.
 
 ## Features
 
-- 🌟 **User-Friendly Interface:** The application boasts a clean and user-friendly interface, ensuring that users can annotate XML data without requiring any technical expertise.
-
-- 📝 **XML Annotation:** You can load an XML file and annotate it by adding tags, attributes, and values to the XML elements.
-
-- 💾 **Save and Export:** After annotating your XML data, you can save the changes to the original file or export the annotated data to a new XML file.
-
-- 🚀 **Lightweight:** The tool is designed to be lightweight, guaranteeing fast performance and minimal resource usage.
+- **Keyboard-Based Annotation:** Quickly annotate text using customizable keyboard shortcuts (a-z, A-Z)
+- **XML Tag Support:** Annotate entities with XML-style tags (e.g., `<tag>text</tag>`)
+- **Event ID Tracking:** Assign and track event IDs for each annotation
+- **Real-Time Visualization:** Color-coded display of annotated entities for easy review
+- **Undo Support:** Use Ctrl+Z to undo recent changes
+- **File Support:** Open and edit .txt, .ann, and .docx files
+- **Export Formats:** Export annotations in multiple formats:
+  - `.ann` files (annotation format)
+  - HTML format
+  - XML format
+  - Sequence format (.txs) for NLP models
+- **Configurable Shortcuts:** Remap keyboard shortcuts to different annotation labels via the config file
+- **Notes Tab:** Built-in notes feature for documentation
+- **Nested Entity Support:** Handle overlapping and nested annotations with visual distinction
+- **Cross-Platform:** Works on Windows, macOS, and Linux
 
 ## Prerequisites
 
-Before using the Lightweight XML Annotation Tool, make sure you have the following prerequisites installed on your system:
+Before using the Text Annotation Tool, ensure you have:
 
-- 🐍 Python (3.x recommended)
-- 🖼️ Tkinter (usually included with Python installations)
+- Python 3.x
+- Tkinter (included with most Python installations)
+- Additional Python packages:
+  - `ttkthemes`
+  - `TKinterModernThemes`
+  - `pywebview`
+  - `aspose-words`
+  - `numpy`
 
 ## Installation
 
-1. Clone this repository to your local machine or download the source code as a ZIP archive.
-
-2. Open a terminal or command prompt and navigate to the directory where you saved the tool's source code.
-
-3. Run the following command to launch the application:
-
+1. Clone or download this repository to your local machine
+2. Navigate to the project directory
+3. Install required dependencies:
    ```bash
-   python annotation_tool.py
+   pip install ttkthemes TKinterModernThemes pywebview aspose-words numpy
+   ```
 ## Usage
-Use the "Open File" button to load the XML file you want to annotate.
 
-In the annotation interface, select an XML element in the tree view on the left.
+### Starting the Application
 
-Use the text fields and buttons on the right to annotate the selected XML element:
+```bash
+python app.py
+```
 
-🏷️ Add attributes and their values.
-➕ Add child elements.
-✏️ Edit element text.
-Click the 💾 "Save" button to save your changes to the original file or use the 📂 "Export" button to save the annotated data to a new XML file.
+The tool will open in fullscreen mode with a text editor and annotation controls.
 
-You can navigate through different elements in the XML file by selecting them in the tree view.
+### Basic Annotation Workflow
 
-To exit the application, simply close the window.
+1. **Open a File:** Use File Operations → Open to load a text file
+2. **Select Text:** Highlight the text you want to annotate
+3. **Apply Tag:** Press a keyboard shortcut (a-z) to tag the selected text
+4. **Assign Event ID:** Enter an event ID number to categorize the annotation
+5. **Save:** Right-click or use File Operations → Export to save your work
+
+### Keyboard Shortcuts
+
+- **a-z keys:** Apply configured annotation tags to selected text
+- **0-9 keys:** Enter event IDs for annotations
+- **Ctrl+Z:** Undo the last action
+- **F11:** Toggle fullscreen mode
+- **Esc:** Exit fullscreen mode
+- **q:** Remove entity label (untag selected text)
+
+### File Operations Menu
+
+- **Open:** Load a text, annotation, or Word document
+- **Remap:** Customize keyboard shortcut mappings
+- **Export File:** Save annotations as .ann file
+- **Export File as HTML:** Convert annotated text to HTML
+- **Export File as XML:** Convert annotated text to XML
+- **Quit:** Exit the application
+
+### Functions Menu
+
+- **Open notes tab:** Access the notes feature
+- **Open Google search:** Launch a web search window
+- **Show Keybindings:** Display available keyboard shortcuts
+- **Close Keybindings:** Hide the keybindings display
+
+## Configuration
+
+The tool stores keyboard shortcut mappings in a `config` file. Use the **Remap** function to customize which keys map to which annotation labels.
+
+## Output Formats
+
+- **.ann files:** Plain text with XML-style annotations
+- **HTML:** Annotated text rendered in HTML with color-coded entities
+- **XML:** Properly formatted XML output
+- **.txs files:** BIO/BMES-tagged format for machine learning models
 
 ## License
-This Lightweight XML Annotation Tool is open-source software released under the MIT License. You are free to use, modify, and distribute it as per the terms of the license.
+
+This tool is open-source software released under the MIT License.
 
 ## Contact
-If you have any questions or need assistance, you can contact the project maintainer at ✉️ https://tinyurl.com/XmlAnn1
+
+For questions or assistance, please refer to the LICENSE file or contact the project maintainers.
